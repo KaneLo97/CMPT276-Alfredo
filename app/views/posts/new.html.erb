@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<% if logged_in? %>
+<div id = "postform">
+	<h1> Post Your Review </h1>
+  <div class="row">
+    <%= form_for(@post) do |form| %>
+      <div class="post_info">
+        <p>
+          <%= form.label :title, 'Title' %><br>
+          <%= form.text_field :title %>
+        </p>
+        <p>
+          <%= form.label :artist, 'Artist' %><br>
+          <%= form.text_field :artist %>
+        </p>
+        <p>
+          <%= form.label :album, 'Album' %><br>
+          <%= form.text_field :album %>
+        </p>
+        <p>
+          <%= form.text_area :content, placeholder: "Write your review here..." %>
+        </p>
+      </div>
+      <%= form.submit "Post", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+</div>
+<%end %>

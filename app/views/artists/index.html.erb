@@ -1,0 +1,54 @@
+<!-- app/views/artists/index.html.erb -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<style>
+  /* unvisited link */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(56, 56, 56);
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: black;
+  text-decoration: none;
+
+}
+  img.GeneratedImage {
+    border-radius:999em;
+    width:100px;height:100px;;border-width:1px;border-color:#000000;border-style:solid;
+  }
+  .containerA{
+    position: relative;
+    left: 150px;
+  }
+  .block {
+    position: relative;
+    top: -75px;
+    left: 125px;
+  }
+</style>
+<body>
+<h1 Artists Matching <%= params[:artist_name] %></h1>
+
+ <% @artists.each do |artist| %>
+ <div class = "containerA"><img src=<%=images_url(artist.images[1])%> alt="Artist pic" class="GeneratedImage">
+ <div class = "block"><%= link_to artist.name, artist_path(artist.id)%></li><br /></div>
+
+ </div>
+ </body>
+ <% end %>

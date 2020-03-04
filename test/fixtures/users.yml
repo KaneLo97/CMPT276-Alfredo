@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+michael:
+  fname: Michael
+  lname: Lam
+  email: mlam@sfu.ca
+  password: Alfredo
+
+jackson:
+  fname: Jackson
+  lname: Pontifex
+  email: jpontife@sfu.ca
+  password: jpontiflex

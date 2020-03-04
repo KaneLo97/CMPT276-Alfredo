@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: "Post 1"
+  content: "Test content1"
+  artist: "Jackson Pontifex"
+  album: "Jackson 5"
+  created_at: <%= 10.minutes.ago %>
+
+two:
+  title: "Post 2"
+  content: "test content 2"
+  artist: "Michael Lam"
+  album: "Alfredo"
+  created_at: <%= 2.years.ago %>
+
+three:
+  title: "Post 3"
+  content: "test content3"
+  artist: "Dane Lim"
+  album: "cake"
+  created_at: <%= 5.hours.ago %>
+
+most_recent:
+  title: "Post recent"
+  content: "RECENT"
+  artist: "recent_artist"
+  album: "recent_album"
+  created_at: <%= Time.zone.now %>

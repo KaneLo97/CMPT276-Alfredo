@@ -1,0 +1,92 @@
+
+<!-- app/views/artists/show.html.erb -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<style type="text/css" scoped>
+  a:link {
+    color: black;
+    text-decoration: none;
+  }
+
+  /* visited link */
+  a:visited {
+    color: black;
+    text-decoration: none;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: rgb(56, 56, 56);
+    text-decoration: none;
+  }
+
+  /* selected link */
+  a:active {
+    color: black;
+    text-decoration: none;
+
+  }
+  img.GeneratedAlbumImage {
+    width:250px;height:250px;margin:10px;border-width:1px;border-color:#000000;border-style:solid;
+  }
+  img.GeneratedArtistImage {
+    border-radius:999em;
+    width:250px;height:250px;margin:10px;border-width:1px;border-color:#000000;border-style:solid;
+  }
+  .containerA{
+    position: relative;
+    margin-left: 12.5%;
+    box-shadow: 0 2.5px 5px 1px rgba(0,0,0,0.2);
+    width: 75%;
+  }
+  .block {
+    position: relative;
+    top: -260px;
+    left: 265px;
+    font-size: 35px;
+  }
+  .songBlock {
+    position: relative;
+    top: -290px;
+    font-size: 20px;
+    width: 60%;
+    left: 265px;
+  }
+  .albumBlock {
+    position: relative;
+    top: -260px;
+    left: 265px;
+    font-size: 15px;
+  }
+</style>
+<!-- <h1 class="page-header"><%= @artist.name %></h1> -->
+<div class = "containerA"><img src=<%=images_url(@artist.images[2])%> alt="Artist pic" class="GeneratedArtistImage"><br /><div class = "block"><p id="artist_name"><%= @artist.name %></p></div></div>
+<% @artist.albums(country: 'US', album_type: 'album,single').each do |album| %><br />
+<div class = "containerA"><img src=<%=images_url(album.images[1])%> alt="Album pic" class="GeneratedAlbumImage">
+  <div class = "songBlock"><h3><%= album.name %></h3><%= link_to "Write Review", posts_path %>
+    <ol type="1">
+    <hr>
+   <% album.tracks.each do |track| %>
+     <li>
+       <%= track.name %>
+     </li>
+     <hr>
+   <% end %>
+    </ol></div></div>
+<% end %>
+
+<p>Reviews of <%= @artist.name %></p>
+<% if @artist_db.present? %>
+  <div class="containerA">
+    <% if @artist_db.posts.any? %>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
+<% else %>
+  <p>This artist currently does not have any reviews</p>
+<% end %>
