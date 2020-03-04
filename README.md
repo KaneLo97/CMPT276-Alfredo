@@ -1,5 +1,5 @@
 # README
-
+Contributors: Cindy, dane, Jack
 Setup Instructions
 1. Clone git repository
 2. Change directories into the cloned repository (i.e., “cd Alfredo”).
