@@ -1,7 +1,7 @@
 # README
 
 Setup Instructions
-1. Clone git repository (i.e., “git clone git@csil-git1.cs.surrey.sfu.ca:mal24/Alfredo.git”).
+1. Clone git repository
 2. Change directories into the cloned repository (i.e., “cd Alfredo”).
 3. Ensure Ruby is installed and that its version is ruby2.3.3p222 or higher (i.e., “ruby -v”). 
 4. Ensure Rails is installed and that its version is Rails 5.1.5 or higher (i.e., “rails --version”).
